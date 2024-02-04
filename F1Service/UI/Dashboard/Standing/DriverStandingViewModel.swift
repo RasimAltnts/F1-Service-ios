@@ -66,4 +66,12 @@ class DriverStandingViewModel: ObservableObject {
     func getDriverImage(name: String) -> String {
         return firebaseServices.getDriverImageURL(name: name)
     }
+    
+    /**
+     This function return the url of constructor
+     */
+    
+    func getConstructorImage(name: String) -> String {
+        return firebaseServices.getConstructorURL(name: name)
+    }
 }

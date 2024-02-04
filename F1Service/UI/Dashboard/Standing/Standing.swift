@@ -20,7 +20,8 @@ struct DriverStanding: View {
                     if let result = viewModel.driverStanding?.mrData.standingsTable {
                         DriverStandingView(
                             driverStanding: result,
-                            onImageFunc: viewModel.getDriverImage)
+                            onImageFunc: viewModel.getDriverImage,
+                            onConstructorImageFunc: viewModel.getConstructorImage)
                     }
                     
                 case .fetchDataError:
@@ -38,19 +39,23 @@ struct DriverStandingView: View {
     var driverStanding:DriverStandingModel.StandingsTable? = nil
     
     var onImageFunc: ((String) -> String)
+    var onConstructorImageFunc: ((String) -> String)
     
     var body: some View {
         if let results = driverStanding?.standingsLists[0] {
             StandingItem(
                 standingImageURL: onImageFunc(results.driverStandings[0].driver.givenName),
+                constructorImageURL: onConstructorImageFunc(results.driverStandings[0].constructors[0].constructorId),
                 standingName: results.driverStandings[0].driver.givenName + " " + results.driverStandings[0].driver.familyName,
                 standingPoint: results.driverStandings[0].points + " P")
             StandingItem(
                 standingImageURL: onImageFunc(results.driverStandings[1].driver.givenName),
+                constructorImageURL: onConstructorImageFunc(results.driverStandings[1].constructors[0].constructorId),
                 standingName: results.driverStandings[1].driver.givenName + " " + results.driverStandings[1].driver.familyName,
                 standingPoint: results.driverStandings[1].points + " P")
             StandingItem(
                 standingImageURL: onImageFunc(results.driverStandings[2].driver.givenName),
+                constructorImageURL: onConstructorImageFunc(results.driverStandings[2].constructors[0].constructorId),
                 standingName: results.driverStandings[2].driver.givenName + " " + results.driverStandings[2].driver.familyName,
                 standingPoint: results.driverStandings[2].points + " P")
         }
