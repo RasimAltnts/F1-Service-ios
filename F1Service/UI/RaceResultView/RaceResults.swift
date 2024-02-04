@@ -50,9 +50,6 @@ struct RaceResultViewItem: View {
             .cornerRadius(12)
             .padding(.trailing,12)
             .padding(.leading,12)
-            .onTapGesture {
-                print(item)
-            }
     }
 }
 

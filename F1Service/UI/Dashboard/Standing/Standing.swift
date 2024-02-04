@@ -7,19 +7,6 @@
 
 import SwiftUI
 
-struct Standing: View {
-    var body: some View {
-        VStack(spacing: 10) {
-            Title(key: "Standing")
-            SubTitle(key: "Driver Standing")
-            DriverStanding()
-            Spacer(minLength: 12)
-            SubTitle(key: "Constructor Standing")
-            ConstructorsStanding()
-        }
-    }
-}
-
 struct DriverStanding: View {
     @StateObject var viewModel = DriverStandingViewModel()
     var body: some View {
@@ -122,6 +109,3 @@ struct ConstructorStandingView: View {
     }
 }
 
-#Preview {
-    Standing()
-}
