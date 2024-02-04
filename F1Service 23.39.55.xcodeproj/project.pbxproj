@@ -62,6 +62,7 @@
 		5C9FE2DD2B5490BD002EC700 /* NextRaceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9FE2DC2B5490BD002EC700 /* NextRaceViewModel.swift */; };
 		5CB9BC062B3B70E400957F3D /* Dashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB9BC052B3B70E400957F3D /* Dashboard.swift */; };
 		5CC83C3C2B52A5330090A115 /* RaceResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC83C3B2B52A5330090A115 /* RaceResultViewModel.swift */; };
+		5CC9B5592B6832B90051EB93 /* RaceResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9B5582B6832B90051EB93 /* RaceResults.swift */; };
 		5CDF796E2B0FF33F008CDB3E /* Counter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDF796D2B0FF33F008CDB3E /* Counter.swift */; };
 		5CDF79702B0FF6A7008CDB3E /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDF796F2B0FF6A7008CDB3E /* Extension.swift */; };
 		5CE87E352B617D43001D82AE /* NextRaceUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE87E342B617D43001D82AE /* NextRaceUI.swift */; };
@@ -121,6 +122,7 @@
 		5C9FE2DC2B5490BD002EC700 /* NextRaceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextRaceViewModel.swift; sourceTree = "<group>"; };
 		5CB9BC052B3B70E400957F3D /* Dashboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dashboard.swift; sourceTree = "<group>"; };
 		5CC83C3B2B52A5330090A115 /* RaceResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceResultViewModel.swift; sourceTree = "<group>"; };
+		5CC9B5582B6832B90051EB93 /* RaceResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceResults.swift; sourceTree = "<group>"; };
 		5CDF796D2B0FF33F008CDB3E /* Counter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Counter.swift; sourceTree = "<group>"; };
 		5CDF796F2B0FF6A7008CDB3E /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		5CE87E342B617D43001D82AE /* NextRaceUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextRaceUI.swift; sourceTree = "<group>"; };
@@ -313,6 +315,7 @@
 		5C4B801D2A9F3EBB00131DFD /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				5CC9B5542B68320F0051EB93 /* RaceResultView */,
 				5CE87E332B617D30001D82AE /* NextRaceView */,
 				5C42F2052B40BDD7000914DF /* Dashboard */,
 				5CF48B2B2B3DF67800C670B6 /* ViewComponent */,
@@ -337,6 +340,14 @@
 				5C92E5912B5C558400C7FDF6 /* RaceListViewModel.swift */,
 			);
 			path = RaceList;
+			sourceTree = "<group>";
+		};
+		5CC9B5542B68320F0051EB93 /* RaceResultView */ = {
+			isa = PBXGroup;
+			children = (
+				5CC9B5582B6832B90051EB93 /* RaceResults.swift */,
+			);
+			path = RaceResultView;
 			sourceTree = "<group>";
 		};
 		5CDF796C2B0FF326008CDB3E /* Utils */ = {
@@ -559,6 +570,7 @@
 				5C42F21D2B40C9EF000914DF /* ArragmentView.swift in Sources */,
 				5C9FE2DD2B5490BD002EC700 /* NextRaceViewModel.swift in Sources */,
 				5C774CDD2B56CBB400B1BD0E /* StandingItem.swift in Sources */,
+				5CC9B5592B6832B90051EB93 /* RaceResults.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

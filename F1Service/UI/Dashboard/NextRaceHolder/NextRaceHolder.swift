@@ -11,8 +11,6 @@ struct NextRaceHolder: View {
     
     @StateObject var viewModel = NextRaceViewModel()
     
-    var onItemTapped: ((NextRaceModel?) -> Void)?
-    
     var body: some View {
         VStack(spacing: 12) {
             
@@ -33,9 +31,6 @@ struct NextRaceHolder: View {
             .cornerRadius(15)
             .shadow(radius: 5)
             .padding(10)
-            .onTapGesture {
-                onItemTapped?(viewModel.nextRaceModel)
-            }
             .task {
                 await viewModel.getNextRaceData()
              }

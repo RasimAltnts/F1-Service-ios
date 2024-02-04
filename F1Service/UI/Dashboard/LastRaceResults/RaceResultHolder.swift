@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct RaceResultHolder: View {
+    
    @StateObject var viewModel = RaceResultViewModel()
     
     var body: some View {

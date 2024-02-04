@@ -10,6 +10,7 @@ import Firebase
 
 @main
  struct F1ServiceApp: App {
+          
     init() {
         FirebaseApp.configure()
     }
