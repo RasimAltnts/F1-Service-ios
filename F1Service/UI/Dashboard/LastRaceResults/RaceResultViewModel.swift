@@ -70,10 +70,9 @@ class RaceResultViewModel: ObservableObject {
     func getFastestLapTime() -> String {
         var result: String = ""
     
-        if let rank = self.lastRaceResultModel?.mrData.raceTable.races[0].results.first(where: {$0.fastestLap.rank == "1"}) {
-            if let _fastestLap = rank.fastestLap.time {
+        if let rank = self.lastRaceResultModel?.mrData.raceTable.races[0].results.first(where: {$0.fastestLap!.rank == "1"}) {
+            if let _fastestLap = rank.fastestLap?.time {
                 result = _fastestLap.time + " s"
-
             }
         }
         return result
@@ -86,7 +85,7 @@ class RaceResultViewModel: ObservableObject {
     
     func getFastestLapDriverName() -> String {
         var result: String = ""
-        if let rank = self.lastRaceResultModel?.mrData.raceTable.races[0].results.first(where: {$0.fastestLap.rank == "1"}) {
+        if let rank = self.lastRaceResultModel?.mrData.raceTable.races[0].results.first(where: {$0.fastestLap!.rank == "1"}) {
             result = rank.driver.givenName + " " + rank.driver.familyName
         }
         return result
