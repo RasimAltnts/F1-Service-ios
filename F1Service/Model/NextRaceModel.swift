@@ -43,11 +43,20 @@ struct NextRaceModel: Codable {
         let raceName: String
         let circuit: Circuit
         let date: String
+        let time: String
+        let firstPractice: Practice
+        let secondPractice: Practice
+        let qualifying: Practice
+    
         
         enum CodingKeys: String, CodingKey {
             case season, round, url, raceName
             case circuit = "Circuit"
-            case date
+            case date = "date"
+            case time = "time"
+            case firstPractice = "FirstPractice"
+            case secondPractice = "SecondPractice"
+            case qualifying = "Qualifying"
         }
     }
 
@@ -70,6 +79,15 @@ struct NextRaceModel: Codable {
     struct Location: Codable {
         let lat, long, locality, country: String
     }
-
+    
+   struct Practice: Codable {
+        let date: String
+        let time: String
+        
+        enum CodingKeys: String,CodingKey {
+            case date = "date"
+            case time = "time"
+        }
+    }
 }
 

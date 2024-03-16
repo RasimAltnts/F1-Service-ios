@@ -9,10 +9,21 @@ import SwiftUI
 
 struct DriverStandingPage: View {
     
-    @StateObject var driverStanding: DriverStandingViewModel = DriverStandingViewModel()
+    @StateObject var viewModel: DriverStandingViewModel = DriverStandingViewModel()
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        if let result = viewModel.driverStanding?.mrData.standingsTable.standingsLists[0].driverStandings {
+            ScrollView(.vertical) {
+                ForEach(0 ... result.count - 1,id: \.self) { index in
+                    StandingItem(
+                        standingImageURL: viewModel.getDriverImage(name: result[index].driver.givenName),
+                        constructorImageURL: viewModel.getConstructorImage(name: result[index].constructors[0].constructorId),
+                        standingName: result[index].driver.givenName + " " + result[index].driver.familyName,
+                        standingPoint: result[index].points + " P"
+                    )
+                }
+            }
+        }
     }
 }
 

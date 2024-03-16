@@ -20,7 +20,10 @@ struct NextRaceHolder: View {
                     ProgressView()
                 case .successful:
                     if let races = viewModel.nextRaceModel?.mrData.raceTable.races[0] {
-                        NextRaceResultView(races: races, imageURL: viewModel.getCountryFlagURL(name: races.circuit.location.country))
+                        NextRaceResultView(
+                            races: races,
+                            imageURL: viewModel.getCountryFlagURL(name: races.circuit.location.country)
+                        )
                     }
                 case .fetchDataError:
                     Text("Someting Goes Wrong").frame(maxWidth: .infinity, maxHeight: 290)
@@ -48,9 +51,14 @@ struct NextRaceResultView: View {
                 NextRaceInfoLayer(
                     country: race.circuit.location.country,
                     circuit_name: race.circuit.circuitName,
-                    date: race.date).padding(10)
+                    date: race.date,
+                    time: race.time).padding(10)
             }.cornerRadius(15)
-            //UnderlineView()
+            UnderlineView(
+                item1: "Qualifying",
+                item2: race.qualifying.date,
+                item3: race.qualifying.time
+            )
         }
     }
 }
@@ -60,6 +68,7 @@ struct NextRaceInfoLayer: View {
     var country: String = ""
     var circuit_name: String = ""
     var date: String = ""
+    var time: String = ""
     var counter: String = "0"
      
     var body: some View {
@@ -68,7 +77,10 @@ struct NextRaceInfoLayer: View {
                 Text(country).font(.custom("KumbhSans-Regular", size: 18))
                 Text(circuit_name).font(.custom("KumbhSans-Regular", size: 18))
                 Text(date).font(.custom("KumbhSans-Regular", size: 18))
-                CountDownTimerScheduleCard()
+                CountDownTimerScheduleCard(
+                time: time,
+                date: date
+                )
             }
             Spacer()
         }
@@ -76,17 +88,22 @@ struct NextRaceInfoLayer: View {
 }
 
 struct CountDownTimerScheduleCard: View {
-    var days: String = "15"
-    var hour: String = "15"
-    var minutes: String = "15"
-    var seconds: String = "15"
+    
+    @StateObject var counter = Counter()
+    
+    var time: String = ""
+    var date: String = ""
     
     var body: some View {
         HStack(spacing:16) {
-            TimerScheduleComponent(item: days)
-            TimerScheduleComponent(item: hour)
-            TimerScheduleComponent(item: minutes)
-            TimerScheduleComponent(item: seconds)
+            TimerScheduleComponent(item: String(counter.days))
+            TimerScheduleComponent(item: String(counter.hours))
+            TimerScheduleComponent(item: String(counter.minutes))
+            TimerScheduleComponent(item: String(counter.seconds))
+        }.task {
+            if(!time.isEmpty && !date.isEmpty) {
+                counter.startTimer(date: date, time: time)
+            }
         }
     }
 }

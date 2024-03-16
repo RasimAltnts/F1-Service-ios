@@ -82,7 +82,7 @@ struct LastRaceResultsModel: Codable {
         let driver: Driver
         let constructor: Constructor
         let grid, laps: String
-        let status: Status
+        let status: String
         let time: ResultTime?
         let fastestLap: FastestLap
 
@@ -123,8 +123,8 @@ struct LastRaceResultsModel: Codable {
     // MARK: - FastestLap
     struct FastestLap: Codable {
         let rank, lap: String
-        let time: FastestLapTime
-        let averageSpeed: AverageSpeed
+        let time: FastestLapTime?
+        let averageSpeed: AverageSpeed?
 
         enum CodingKeys: String, CodingKey {
             case rank, lap
@@ -136,7 +136,7 @@ struct LastRaceResultsModel: Codable {
     // MARK: - AverageSpeed
     struct AverageSpeed: Codable {
         let units: Units
-        let speed: String
+        let speed: String = "-1"
     }
 
     enum Units: String, Codable {
@@ -145,14 +145,9 @@ struct LastRaceResultsModel: Codable {
 
     // MARK: - FastestLapTime
     struct FastestLapTime: Codable {
-        let time: String
+        let time: String = "-1"
     }
 
-    enum Status: String, Codable {
-        case finished = "Finished"
-        case retired = "Retired"
-        case the1Lap = "+1 Lap"
-    }
 
     // MARK: - ResultTime
     struct ResultTime: Codable {

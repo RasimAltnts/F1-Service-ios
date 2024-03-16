@@ -31,7 +31,7 @@ struct Dashboard: View {
                     //--------
                     
                     //This section goes to the Race Results with the Navigation
-                    NavigationLink {
+                  NavigationLink {
                         if let results = raceResultsViewModel.lastRaceResultModel?.mrData.raceTable.races[0] {
                             RaceResults(viewModel: raceResultsViewModel).navigationTitle("Race Results")
                         }
@@ -45,7 +45,9 @@ struct Dashboard: View {
                 
                     //This section goes to the Driver Standing with the Navigation
                     NavigationLink {
-                        DriverStandingPage()
+                        DriverStandingPage(
+                        viewModel: driverStandingViewModel
+                        ).navigationTitle("Driver Standings")
                     } label: {
                         DriverStanding(
                         viewModel: driverStandingViewModel
@@ -59,7 +61,9 @@ struct Dashboard: View {
                     
                     // This section goes to the Constructor Standing with the Navigation
                     NavigationLink {
-                        ConstructorStandingPage().navigationTitle("Constructor Standing")
+                        ConstructorStandingPage(
+                        viewModel: constructorStandingViewModel
+                        ).navigationTitle("Constructor Standing")
                     } label: {
                         ConstructorsStanding(viewModel: constructorStandingViewModel).foregroundColor(Color("PrimaryTextColor"))
                     }
@@ -67,7 +71,9 @@ struct Dashboard: View {
                     
                     // This section goes the Race List Page with Navigation
                     NavigationLink {
-                        RaceListPage()
+                        RaceList(
+                            viewModel: raceListViewModel
+                        ).navigationTitle("Race List")
                     } label: {
                         RaceList(viewModel: raceListViewModel).foregroundColor(Color("PrimaryTextColor"))
                     }

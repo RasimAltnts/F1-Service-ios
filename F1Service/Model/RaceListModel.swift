@@ -53,7 +53,7 @@ struct RaceListModel: Codable {
         enum CodingKeys: String, CodingKey {
             case season, round, url, raceName
             case circuit = "Circuit"
-            case date, time
+            case date, time = ""
             case firstPractice = "FirstPractice"
             case secondPractice = "SecondPractice"
             case thirdPractice = "ThirdPractice"

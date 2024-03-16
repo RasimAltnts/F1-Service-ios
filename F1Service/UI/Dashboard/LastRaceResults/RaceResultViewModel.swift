@@ -69,8 +69,12 @@ class RaceResultViewModel: ObservableObject {
      */
     func getFastestLapTime() -> String {
         var result: String = ""
+    
         if let rank = self.lastRaceResultModel?.mrData.raceTable.races[0].results.first(where: {$0.fastestLap.rank == "1"}) {
-            result = rank.fastestLap.time.time + " s"
+            if let _fastestLap = rank.fastestLap.time {
+                result = _fastestLap.time + " s"
+
+            }
         }
         return result
     }

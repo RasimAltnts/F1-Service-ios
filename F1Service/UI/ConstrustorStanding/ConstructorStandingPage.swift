@@ -8,9 +8,21 @@
 import SwiftUI
 
 struct ConstructorStandingPage: View {
-    @StateObject var viewModel: ConstructorViewModel = ConstructorViewModel()
+    
+    @StateObject var viewModel = ConstructorViewModel()
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        if let result = viewModel.constructorStanding?.mrData.standingsTable.standingsLists[0].constructorStandings {
+            ScrollView(.vertical) {
+                ForEach(0 ... result.count - 1,id: \.self) { index in
+                    StandingItem(
+                        standingImageURL: viewModel.getConstructorImageURL(name: result[index].constructor.constructorID),
+                        standingName: result[index].constructor.name,
+                        standingPoint: result[index].points + " P"
+                    )
+                }
+            }
+        }
     }
 }
 
