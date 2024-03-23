@@ -18,7 +18,7 @@ struct Holder: View {
             }
             
         }.frame(maxWidth: .infinity, maxHeight: 150)
-            .background(Color("PrimaryColor"))
+            .background(Color("Grey"))
     }
 }
 
