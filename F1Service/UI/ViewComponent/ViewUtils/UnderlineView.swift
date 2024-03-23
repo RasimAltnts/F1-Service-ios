@@ -14,11 +14,11 @@ struct UnderlineView: View {
     var body: some View {
         VStack(alignment: .leading) {
             HStack() {
-                Text(item1).font(.custom("KumbhSans-Regular", size: 18))
+                Text(item1).font(.custom("KumbhSans-Regular", size: 18)).foregroundColor(Color("PrimaryTextColor"))
                 Spacer()
-                Text(item2).font(.custom("KumbhSans-Regular", size: 18))
+                Text(item2).font(.custom("KumbhSans-Regular", size: 18)).foregroundColor(Color("PrimaryTextColor"))
                 Spacer()
-                Text(item3).font(.custom("KumbhSans-Regular", size: 18))
+                Text(item3).font(.custom("KumbhSans-Regular", size: 18)).foregroundColor(Color("PrimaryTextColor"))
 
             }
             Underline()
@@ -32,7 +32,7 @@ struct Underline: View {
     var body: some View {
         Rectangle()
             .frame(height: 1)  // Adjust height as needed
-            .foregroundColor(.black)
+            .foregroundColor(Color("Grey"))
     }
 }
 
