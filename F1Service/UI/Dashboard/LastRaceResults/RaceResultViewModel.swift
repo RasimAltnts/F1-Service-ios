@@ -67,28 +67,34 @@ class RaceResultViewModel: ObservableObject {
     /**
      This function gets the fastest lap time from ergast services
      */
-    func getFastestLapTime() -> String {
-        var result: String = ""
-    
-        if let rank = self.lastRaceResultModel?.mrData.raceTable.races[0].results.first(where: {$0.fastestLap!.rank == "1"}) {
-            if let _fastestLap = rank.fastestLap?.time {
-                result = _fastestLap.time + " s"
+    func getFastestLapTime() -> String? {
+        var result: String? = nil
+        
+        if(isNullCheckOfFastestLap()) {
+            if let rank = self.lastRaceResultModel?.mrData.raceTable.races[0].results.first(where: {$0.fastestLap!.rank == "1"}) {
+                if let _fastestLap = rank.fastestLap?.time {
+                    result = _fastestLap.time + " s"
+                }
             }
         }
         return result
     }
     
-    
     /**
      This function gets the drivername for fastest lap
      */
     
-    func getFastestLapDriverName() -> String {
-        var result: String = ""
-        if let rank = self.lastRaceResultModel?.mrData.raceTable.races[0].results.first(where: {$0.fastestLap!.rank == "1"}) {
-            result = rank.driver.givenName + " " + rank.driver.familyName
+    func getFastestLapDriverName() -> String? {
+        var result: String? = nil
+        if(isNullCheckOfFastestLap()) {
+            if let rank = self.lastRaceResultModel?.mrData.raceTable.races[0].results.first(where: {$0.fastestLap!.rank == "1"}) {
+                result = rank.driver.givenName + " " + rank.driver.familyName
+            }
         }
         return result
     }
-
+    
+    private func isNullCheckOfFastestLap() -> Bool {
+        return self.lastRaceResultModel?.mrData.raceTable.races[0].results[0].fastestLap != nil
+    }
 }

@@ -86,12 +86,7 @@ struct LastRaceResultsModel: Codable {
         let time: ResultTime?
         let fastestLap: FastestLap?
        
-        /*let fastestLap: FastestLap = FastestLap(
-            rank: "21",
-            lap: "21",
-            time: FastestLapTime(),
-            averageSpeed: AverageSpeed(units: Units.kph))
-         */
+
 
         enum CodingKeys: String, CodingKey {
             case number, position, positionText, points

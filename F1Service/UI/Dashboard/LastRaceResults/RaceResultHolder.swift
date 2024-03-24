@@ -40,8 +40,8 @@ struct RaceResultView: View {
     var results: LastRaceResultsModel.Race? = nil
     var onImageFunc: ((String) -> String)
     
-    var fastestLapDriver: String = ""
-    var fastestLapTime: String = ""
+    var fastestLapDriver: String? = nil
+    var fastestLapTime: String? = nil
     
     var body: some View {
         
@@ -63,10 +63,11 @@ struct RaceResultView: View {
             .padding(.trailing,12)
         }
         
-        ArragmentView(
-            driver: fastestLapDriver,
-            time: fastestLapTime)
-
+        if(fastestLapDriver != nil && fastestLapTime != nil) {
+            ArragmentView(
+                driver: fastestLapDriver!,
+                time: fastestLapTime!)
+        }
     }
 }
 
