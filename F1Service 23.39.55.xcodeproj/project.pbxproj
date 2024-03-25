@@ -65,6 +65,8 @@
 		5CB9BC062B3B70E400957F3D /* Dashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB9BC052B3B70E400957F3D /* Dashboard.swift */; };
 		5CC83C3C2B52A5330090A115 /* RaceResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC83C3B2B52A5330090A115 /* RaceResultViewModel.swift */; };
 		5CC9B5592B6832B90051EB93 /* RaceResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9B5582B6832B90051EB93 /* RaceResults.swift */; };
+		5CDCA4862BA7481E00179EF4 /* RaceListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDCA4852BA7481E00179EF4 /* RaceListView.swift */; };
+		5CDCA4882BA748A100179EF4 /* RaceListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDCA4872BA748A100179EF4 /* RaceListItem.swift */; };
 		5CDF796E2B0FF33F008CDB3E /* Counter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDF796D2B0FF33F008CDB3E /* Counter.swift */; };
 		5CDF79702B0FF6A7008CDB3E /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDF796F2B0FF6A7008CDB3E /* Extension.swift */; };
 		5CE87E352B617D43001D82AE /* NextRaceUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE87E342B617D43001D82AE /* NextRaceUI.swift */; };
@@ -127,6 +129,8 @@
 		5CB9BC052B3B70E400957F3D /* Dashboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dashboard.swift; sourceTree = "<group>"; };
 		5CC83C3B2B52A5330090A115 /* RaceResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceResultViewModel.swift; sourceTree = "<group>"; };
 		5CC9B5582B6832B90051EB93 /* RaceResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceResults.swift; sourceTree = "<group>"; };
+		5CDCA4852BA7481E00179EF4 /* RaceListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceListView.swift; sourceTree = "<group>"; };
+		5CDCA4872BA748A100179EF4 /* RaceListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceListItem.swift; sourceTree = "<group>"; };
 		5CDF796D2B0FF33F008CDB3E /* Counter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Counter.swift; sourceTree = "<group>"; };
 		5CDF796F2B0FF6A7008CDB3E /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		5CE87E342B617D43001D82AE /* NextRaceUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextRaceUI.swift; sourceTree = "<group>"; };
@@ -218,6 +222,7 @@
 				5C42F20E2B40C257000914DF /* UnderlineView.swift */,
 				5C774CDA2B56CA9500B1BD0E /* Title.swift */,
 				5C774CDC2B56CBB400B1BD0E /* StandingItem.swift */,
+				5CDCA4872BA748A100179EF4 /* RaceListItem.swift */,
 			);
 			path = ViewUtils;
 			sourceTree = "<group>";
@@ -319,6 +324,7 @@
 		5C4B801D2A9F3EBB00131DFD /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				5CDCA4842BA7479200179EF4 /* RaceListView */,
 				5C75BCA52B703276002EBB13 /* ConstrustorStanding */,
 				5C75BC9F2B702E5B002EBB13 /* DriverStanding */,
 				5CC9B5542B68320F0051EB93 /* RaceResultView */,
@@ -370,6 +376,14 @@
 				5CC9B5582B6832B90051EB93 /* RaceResults.swift */,
 			);
 			path = RaceResultView;
+			sourceTree = "<group>";
+		};
+		5CDCA4842BA7479200179EF4 /* RaceListView */ = {
+			isa = PBXGroup;
+			children = (
+				5CDCA4852BA7481E00179EF4 /* RaceListView.swift */,
+			);
+			path = RaceListView;
 			sourceTree = "<group>";
 		};
 		5CDF796C2B0FF326008CDB3E /* Utils */ = {
@@ -568,6 +582,7 @@
 				5CC83C3C2B52A5330090A115 /* RaceResultViewModel.swift in Sources */,
 				5C4614AC2B42E2EC007D88C6 /* LastRaceResultsModel.swift in Sources */,
 				5CF968702B5A68FE003C896F /* ConstructorViewModel.swift in Sources */,
+				5CDCA4882BA748A100179EF4 /* RaceListItem.swift in Sources */,
 				5C00E8512AACD9C400C0259E /* NextRaceModel.swift in Sources */,
 				5C3A38CF2B51CAB600560DED /* FirebaseServices.swift in Sources */,
 				5C298F562B595CE800BBB8D4 /* DriverStandingModel.swift in Sources */,
@@ -595,6 +610,7 @@
 				5C774CDD2B56CBB400B1BD0E /* StandingItem.swift in Sources */,
 				5C75BCA42B702ED3002EBB13 /* DriverStandingPage.swift in Sources */,
 				5CC9B5592B6832B90051EB93 /* RaceResults.swift in Sources */,
+				5CDCA4862BA7481E00179EF4 /* RaceListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
