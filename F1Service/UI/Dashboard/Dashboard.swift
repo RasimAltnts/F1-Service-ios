@@ -57,7 +57,7 @@ struct Dashboard: View {
                     
                     Spacer(minLength: 12)
                     SubTitle(key: "Constructor Standing")
-
+                    
                     
                     // This section goes to the Constructor Standing with the Navigation
                     NavigationLink {
@@ -65,13 +65,15 @@ struct Dashboard: View {
                         viewModel: constructorStandingViewModel
                         ).navigationTitle("Constructor Standing")
                     } label: {
-                        ConstructorsStanding(viewModel: constructorStandingViewModel).foregroundColor(Color("PrimaryTextColor"))
+                        ConstructorsStanding(
+                            viewModel: constructorStandingViewModel
+                        ).foregroundColor(Color("PrimaryTextColor"))
                     }
                     //-------
                     
                     // This section goes the Race List Page with Navigation
                     NavigationLink {
-                        RaceList(
+                        RaceListView(
                             viewModel: raceListViewModel
                         ).navigationTitle("Race List")
                     } label: {
